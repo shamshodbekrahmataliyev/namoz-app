@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Namoz App 🕌</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <div class="header">
+      <h1>🕌 Namoz App</h1>
+      <div id="location-info">📍 Joylashuv aniqlanmoqda...</div>
+      <div id="current-time"></div>
+      <div id="hijri-date"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('prayer')">🕐 Namoz</button>
+      <button class="tab" onclick="showTab('qibla')">🧭 Qibla</button>
+      <button class="tab" onclick="showTab('tasbeh')">📿 Tasbeh</button>
+    </div>
+
+    <!-- Prayer Times Tab -->
+    <div id="prayer-tab" class="tab-content active">
+      <div class="next-prayer-card">
+        <div class="next-label">Keyingi namoz</div>
+        <div id="next-prayer-name" class="next-name">—</div>
+        <div id="next-prayer-countdown" class="countdown">—</div>
+      </div>
+      <div class="prayer-list" id="prayer-list"></div>
+    </div>
+
+    <!-- Qibla Tab -->
+    <div id="qibla-tab" class="tab-content">
+      <div class="qibla-container">
+        <div class="compass-wrap">
+          <div class="compass" id="compass">
+            <div class="compass-rose">
+              <span class="dir n">N</span>
+              <span class="dir e">E</span>
+              <span class="dir s">S</span>
+              <span class="dir w">W</span>
+            </div>
+            <div class="needle" id="qibla-needle">🕋</div>
+          </div>
+        </div>
+        <div id="qibla-degree" class="qibla-info">Qibla aniqlanmoqda...</div>
+        <div id="qibla-distance" class="qibla-info"></div>
+        <p class="qibla-hint">📱 Qurilmangizni tekis ushlab, o'ng tomonga buriting.</p>
+      </div>
+    </div>
+
+    <!-- Tasbeh Tab -->
+    <div id="tasbeh-tab" class="tab-content">
+      <div class="tasbeh-container">
+        <div class="tasbeh-select">
+          <select id="zikr-select" onchange="changeZikr()">
+            <option value="Subhanallah">SubhanAllah (33)</option>
+            <option value="Alhamdulillah">Alhamdulillah (33)</option>
+            <option value="Allahu Akbar">Allahu Akbar (33)</option>
+            <option value="La ilaha illallah">La ilaha illallah (100)</option>
+            <option value="Astaghfirullah">Astaghfirullah (100)</option>
+          </select>
+        </div>
+        <div class="tasbeh-display">
+          <div id="zikr-name" class="zikr-name">SubhanAllah</div>
+          <div id="tasbeh-count" class="tasbeh-count">0</div>
+          <div id="tasbeh-target" class="tasbeh-target">/ 33</div>
+        </div>
+        <button class="tasbeh-btn" id="tasbeh-main-btn" onclick="countTasbeh()">
+          <span>📿</span>
+        </button>
+        <div class="tasbeh-actions">
+          <button class="btn-reset" onclick="resetTasbeh()">🔄 Qayta boshlash</button>
+          <div id="tasbeh-rounds" class="rounds">Aylanishlar: 0</div>
+        </div>
+        <div class="tasbeh-progress">
+          <div id="progress-bar" class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
