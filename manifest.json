@@ -1,0 +1,28 @@
+{
+  "name": "Namoz App",
+  "short_name": "Namoz",
+  "description": "Namoz vaqtlari, Qibla va Tasbeh ilovasi",
+  "start_url": "/namoz-app/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#ffd700",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14/assets/72x72/1f54c.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14/assets/144x144/1f54c.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14/assets/svg/1f54c.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
